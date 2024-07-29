@@ -157,14 +157,30 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           children: [
                             LottieBuilder.asset(getWeatherAnimation(
                                 weatherProvider.weatherData!.list[0].weather)),
-                            Text(
-                              '${weatherProvider.weatherData!.list[0].temp!
-                                  .toStringAsFixed(2)}${_selectedMetric == 'Celsius' ? "°C" : "°F"}',
-                              style: const TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
+                            Column(
+                              children: [
+
+
+                                Text(
+                                  '${weatherProvider.weatherData!.list[0].temp!
+                                      .toStringAsFixed(2)}${_selectedMetric == 'Celsius' ? "°C" : "°F"}',
+                                  style: const TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+
+                                 Text(
+                                  weatherProvider.weatherData!.list[0].weather!
+                                      ,
+                                  style: const TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         )
